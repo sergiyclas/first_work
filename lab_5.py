@@ -139,19 +139,18 @@ class MusicFestival:
 
     def sum_money(self):
         """
-        Summing all salary musicians of list(lst)
+        Summing all salary musicians of list
         """
-        lst = self.musician_list
         sum_ = 0
         if not lst:
             return 0
 
-        for musician in lst:
-            musician_ = self.all_musician_dict.get(musician, "Not found musician")
-            if musician_ == "Not found musiciant":
+        for musician in self.musician_list:
+            member_musician = self.all_musician_dict.get(musician, "Not found musician")
+            if member_musician == "Not found musiciant":
                 print("Not found such a musician in list")
                 return None
-            sum_ += musician_.get_salary()
+            sum_ += member_musician.get_salary()
 
         return sum_
 
@@ -195,24 +194,3 @@ if __name__ == "__main__":
     print(music_festival.returning())
 
 musician_12 = all_musician_dict.get("Andriy", "Hasn`t found")
-
-# n = int(input("Input number of musicians: "))
-#
-# for i in range(n):
-#     name_ = str(input("Input name of musician: "))
-#     age_ = int(input("Input age of musician: "))
-#     salary_ = float(input("Input salary, which want musician($): "))
-#     rank_ = int(input("Input rank of musician: "))
-#
-#     musician_ = Musician(name_, age_, salary_, rank_)
-#
-#     all_musicians_dict[name_] = musician_
-#
-#
-# print(all_musicians_dict)
-
-
-# max_money_ = float(input("Input budget of Festival($): "))
-# lst_of_musicians = list(map(str, input("Input names of all musicians....
-# .... separated by commas(Andriy, Serhiy): ").split(", ")))
-# music_festival_ = MusicFestival(lst_of_musicians, max_money_)
